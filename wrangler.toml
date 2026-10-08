@@ -1,0 +1,16 @@
+name = "supportdesk"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+
+[assets]
+directory = "./public"
+not_found_handling = "single-page-application"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "supportdesk-db"
+database_id = "b9f6780f-f35e-4761-b94f-5f665592ed3b"
+migrations_dir = "migrations"
+
+[dev]
+port = 8787

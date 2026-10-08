@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SupportDesk — Acme Support Customer Portal</title>
+  <meta name="description" content="Acme Support customer portal: submit tickets, track progress, and download invoices." />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#/" id="brand-link">
+        <span class="brand-mark">A</span>
+        <span class="brand-text"><strong>Acme Support</strong><small data-i18n="tagline">Customer Support Portal</small></span>
+      </a>
+      <nav class="nav" id="main-nav" hidden>
+        <a href="#/dashboard" data-i18n="nav_dashboard">Dashboard</a>
+        <a href="#/tickets" data-i18n="nav_tickets">Tickets</a>
+        <a href="#/invoices" data-i18n="nav_invoices">Invoices</a>
+      </nav>
+      <div class="top-actions">
+        <button id="lang-toggle" class="btn ghost" type="button">عربي</button>
+        <span id="user-chip" class="user-chip" hidden></span>
+        <button id="logout-btn" class="btn ghost" type="button" hidden data-i18n="logout">Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap" id="app" aria-live="polite"></main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>© 2026 Acme Support · Riyadh · Dubai · Cairo</span>
+      <span class="muted" data-i18n="footer_note">Secure portal · support@acme.support · +966 11 234 5678</span>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>

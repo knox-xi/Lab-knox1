@@ -1,0 +1,22 @@
+{
+  "name": "supportdesk",
+  "version": "1.0.0",
+  "description": "Acme Support — Customer Support Portal (Cloudflare Workers + D1)",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --local --port 8787",
+    "deploy": "wrangler deploy",
+    "build": "tsc --noEmit",
+    "db:create": "wrangler d1 create supportdesk-db",
+    "db:migrate:local": "wrangler d1 migrations apply supportdesk-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply supportdesk-db --remote",
+    "db:reset:local": "rm -f .wrangler/state/v3/d1/miniflare-D1DatabaseObject/*.sqlite* && npm run db:migrate:local",
+    "seed:check:local": "wrangler d1 execute supportdesk-db --local --command \"SELECT id, invoice_number, user_id, ticket_id FROM invoices ORDER BY id;\"",
+    "verify": "node scripts/verify.mjs"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250620.0",
+    "typescript": "^5.5.0",
+    "wrangler": "^4.0.0"
+  }
+}
